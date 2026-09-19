@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Recipe</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CREATE RECIPE -->
+    <div class="container py-5">
+
+        <div class="recipe-box">
+
+            <h1>Create Recipe</h1>
+            <p class="subtitle">Share your favorite recipe with everyone</p>
+
+            <form id="recipeForm">
+
+                <!-- Recipe Title -->
+                <div class="mb-3">
+                    <label for="recipeTitle" class="form-label">
+                        Recipe Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="recipeTitle"
+                        class="form-control"
+                        placeholder="Enter recipe title"
+                        required
+                    >
+                </div>
+
+                <!-- Category -->
+                <div class="mb-3">
+                    <label for="category" class="form-label">
+                        Category
+                    </label>
+
+                    <select id="category" class="form-select" required>
+                        <option value="">Select Category</option>
+                        <option value="Breakfast">Breakfast</option>
+                        <option value="Lunch">Lunch</option>
+                        <option value="Dinner">Dinner</option>
+                        <option value="Dessert">Dessert</option>
+                        <option value="Snacks">Snacks</option>
+                        <option value="Drinks">Drinks</option>
+                    </select>
+                </div>
+
+                <!-- Ingredients -->
+                <div class="mb-3">
+                    <label for="ingredients" class="form-label">
+                        Ingredients
+                    </label>
+
+                    <textarea
+                        id="ingredients"
+                        class="form-control"
+                        rows="5"
+                        placeholder="Enter ingredients..."
+                        required
+                    ></textarea>
+                </div>
+
+                <!-- Instructions -->
+                <div class="mb-3">
+                    <label for="instructions" class="form-label">
+                        Instructions
+                    </label>
+
+                    <textarea
+                        id="instructions"
+                        class="form-control"
+                        rows="6"
+                        placeholder="Write recipe instructions..."
+                        required
+                    ></textarea>
+                </div>
+
+                <!-- Upload Image -->
+                <div class="mb-4">
+                    <label for="recipeImage" class="form-label">
+                        Upload Recipe Image
+                    </label>
+
+                    <input
+                        type="file"
+                        id="recipeImage"
+                        class="form-control"
+                        accept="image/*"
+                        required
+                    >
+
+                    <div id="imagePreview"></div>
+                </div>
+
+                <!-- Button -->
+                <button
+                    type="submit"
+                    id="createRecipeBtn"
+                    class="btn create-btn"
+                >
+                    Create Recipe
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+
+</body>
+</html>
+    
+</body>
+</html>

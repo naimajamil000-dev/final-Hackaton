@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        
+</head>
+<body>
+     <!-- ==================== LOADER ==================== -->
+
+    <div class="loader"></div>
+
+
+
+    
+
+    <!-- ==================== NAVBAR ==================== -->
+
+    <nav class="navbar navbar-expand-lg bg-body" id="navbar">
+      <div class="container-fluid">
+        <a
+          class="navbar-brand d-flex align-items-center fw-bold"
+          href="./index.html"
+        >
+          <img
+            src="./images/nav logo.png"
+            alt="Logo"
+            width="60"
+            height="54"
+            class="d-inline-block align-text-top"
+          />
+         Recipie <span class="text-warning">Sharing</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#home"
+                >Home</a
+              >
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#catagories">catagories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#All recipies">Contact</a>
+            </li>
+          </ul>
+          <div class="text-center" id="loginSignupBtn">
+            <a 
+                    
+              href="./login.html"
+              class="text-black bg-light p-2 rounded-2 text-decoration-none"
+              >Login</a
+            >
+
+            <a
+              href="./signup.html"
+              class="text-black bg-warning p-2 rounded-2 text-decoration-none"
+              >Sign Up</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+
+    <div class="container" id="home">
+      <div
+        class="row flex-lg-row-reverse align-items-center justify-content-center text-center text-lg-start g-5 py-5"
+      >
+        <div class="col-10 col-sm-8 col-lg-6">
+          <img
+            src="./images/hero.png"
+            class="d-block mx-lg-auto img-fluid"
+            alt="Bootstrap Themes"
+            width="700"
+            height="500"
+            loading="lazy"
+          />
+        </div>
+        <div class="col-lg-6">
+          <h1 class="display-4 fw-bold text-body-emphasis lh-1 mb-3">
+             <span class="text-warning">Discover. Cook. Share.”</span>
+          </h1>
+          <p class="lead fw-semibold">Explore delicious recipes, share your favorite dishes, </p>
+          <p class="lead fw-semibold">and inspire food lovers everywhere.</p>
+          <div class="d-grid gap-2 d-lg-flex justify-content-lg-start">
+            <button type="button" class="btn btn-warning btn-lg px-4 me-md-2">
+              <a href="#course" class="text-black text-decoration-none"
+                >Browse Courses</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+          
+
+    <!-- ==================== catagories ==================== -->
+
+    <div class="container" id="course">
+      <h2 class="pb-3">popular catagories</h2>
+      <div class="row row-cols-2 row-cols-md-4 g-4 pb-5">
+        <!-- breakfast -->
+        <div class="col">
+          <div class="card h-80 pt-7 text-center">
+            <img
+              src="images/brakfast.png
+              "
+              class="card-img-top w-100 mx-auto"
+              alt="breakfast"
+            />
+            <div class="card-body">
+              <h5 class="card-title">breakfast</h5>
+              <p class="card-text">12 items</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- lunch -->
+        <div class="col">
+          <div class="card h-80 pt-6 text-center">
+            <img
+              src="./images/lunch.png"
+              class="card-img-top w-100 h-100 mx-auto"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">lunch</h5>
+              <p class="card-text">10 items</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- REfreshment-->
+        <div class="col">
+          <div class="card h-80 pt-7 text-center">
+            <img
+              src="./images/refreshment.png"
+              class="card-img-top w-100 h-100 mx-auto"
+              alt=""
+            />
+            <div class="card-body">
+              <h5 class="card-title">Refreshment</h5>
+              <p class="card-text">8 items</p>
+            </div>
+          </div>
+        </div>
+
+        <!--Dinner-->
+        <div class="col">
+          <div class="card h-80 pt-8 text-center">
+            <img
+              src="./images/dinner.png"
+              class="card-img-top w-100 h-100 mx-auto"
+              alt="dinner"
+            />
+            <div class="card-body">
+              <h5 class="card-title">dinner</h5>
+              <p class="card-text">9 items</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== CONTACT ==================== -->
+
+    <div class="container py-5" id="contact">
+      <div class="text-center mb-5">
+        <span class="text-warning fw-bold">CONTACT US</span>
+        <h2 class="display-6 fw-bold mt-2">Let's share recipes</h2>
+        <p class="text-muted">Have a question? We'd love to hear from you.</p>
+      </div>
+
+      <div class="row g-5 align-items-center">
+        <!-- Contact Information -->
+        <div class="col-lg-5">
+          <h3 class="fw-bold mb-4">Get In Touch</h3>
+
+          <p class="text-muted">
+            Whether you have a question about our recipes, need help, or simply
+            want to say hello, feel free to contact us.
+          </p>
+
+          <div class="d-flex align-items-center gap-3 mt-4">
+            <div class="bg-warning rounded-circle p-3">📧</div>
+            <div>
+              <h6 class="fw-bold mb-1">Email</h6>
+              <p class="text-muted mb-0">info@learnera.com</p>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center gap-3 mt-4">
+            <div class="bg-warning rounded-circle p-3">📞</div>
+            <div>
+              <h6 class="fw-bold mb-1">Phone</h6>
+              <p class="text-muted mb-0">+92**********</p>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center gap-3 mt-4">
+            <div class="bg-warning rounded-circle p-3">📍</div>
+            <div>
+              <h6 class="fw-bold mb-1">Location</h6>
+              <p class="text-muted mb-0">Karachi, Pakistan</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-lg-7">
+          <div class="card border-0 shadow-sm p-4 rounded-4">
+            <form>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Your Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter your name"
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Enter your email"
+                  />
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label fw-semibold">recipe</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter subject"
+                  />
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label fw-semibold">Message</label>
+                  <textarea
+                    class="form-control"
+                    rows="5"
+                    placeholder="Write your message..."
+                  ></textarea>
+                </div>
+
+                <div class="col-12">
+                  <button type="submit" class="btn btn-warning px-4 py-2">
+                    Send Message
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+
+    <footer class="bg-dark text-white pt-5 pb-3 mt-5 text-center text-lg-start">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Logo / About -->
+          <div class="col-lg-4 col-md-6">
+            <a
+              href="#"
+              class="text-white text-decoration-none d-flex align-items-center fw-bold fs-4"
+            >
+              <img
+                src="./images/nav logo.png"
+                alt=""
+                width="50"
+                height="45"
+                class="me-2"
+              />
+             Explore delicious recipes, share your favorite dishes, 
+            </a>
+
+            <p class="text-secondary mt-3">
+              
+            </p>
+          </div>
+
+          <!-- Links -->
+          <div class="col-lg-2 col-md-6">
+            <h5 class="fw-bold mb-3">Quick Links</h5>
+
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#" class="text-secondary text-decoration-none">
+                  Home
+                </a>
+              </li>
+
+              <li class="mb-2">
+                <a href="#about" class="text-secondary text-decoration-none">
+                  About
+                </a>
+              </li>
+
+              <li class="mb-2">
+                <a href="#course" class="text-secondary text-decoration-none">
+                  Courses
+                </a>
+              </li>
+
+              <li class="mb-2">
+                <a href="#contact" class="text-secondary text-decoration-none">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Courses -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="fw-bold mb-3">Our recipes</h5>
+
+            <ul class="list-unstyled text-secondary">
+              <li class="mb-2">breakfast</li>
+              <li class="mb-2">lunch</li>
+              <li class="mb-2">REfreshment</li>
+              <li class="mb-2">Dinner</li>
+            </ul>
+          </div>
+
+          <!-- Social -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="fw-bold mb-3">Follow Us</h5>
+
+            <p class="text-secondary">
+              Stay connected and never miss an update.
+            </p>
+
+            <div class="d-flex gap-2">
+              <a href="#" class="btn btn-outline-light rounded-circle"> f </a>
+
+              <a href="#" class="btn btn-outline-light rounded-circle"> in </a>
+
+              <a href="#" class="btn btn-outline-light rounded-circle"> ◎ </a>
+
+              <a href="#" class="btn btn-outline-light rounded-circle"> ▶ </a>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-secondary my-4" />
+
+        <div class="text-center text-secondary">
+          <small> © 2026 LearnEra. All Rights Reserved.</small>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+    <!-- supabase link -->
+   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- app.js link -->
+     <script src="app.js"></script>
+</body>
+</html>
+
