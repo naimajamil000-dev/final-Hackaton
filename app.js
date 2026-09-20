@@ -2,10 +2,11 @@ const supabaseUrl = "https://bzkpqnpfvpqvhufrrfbb.supabase.co"
 const supabaseKey = "sb_publishable_c-SfrJKU4uCUXn51MT_lew_cyn8jlXh"
 
 
+// const { createClient } = client
+// const client = createClient(supabaseUrl, supabaseKey)
 const { createClient } = supabase
-const supabaseClient = createClient(supabaseUrl, supabaseKey)
+const client = createClient(supabaseUrl, supabaseKey);
 
-// console.log(client)
 
 
 // ======================================
@@ -257,7 +258,7 @@ signupForm?.addEventListener("submit", async (event) => {
         // Supabase Signup
 
         const { data, error } =
-            await supabaseClient.auth.signUp({
+            await client.auth.signUp({
 
                 email: email,
 
@@ -304,7 +305,7 @@ signupForm?.addEventListener("submit", async (event) => {
 
     } catch (error) {
 
-        console.log("Error:", error);
+        // console.log("Error:", error);
 
         Swal.fire({
             icon: "error",
@@ -356,7 +357,7 @@ studentLogin?.addEventListener("submit", async (event) => {
     try {
 
         const { data, error } =
-            await supabaseClient.auth.signInWithPassword({
+            await client.auth.signInWithPassword({
 
                 email: email,
 
@@ -396,80 +397,86 @@ studentLogin?.addEventListener("submit", async (event) => {
 
 });
 
+let logoutbtn = document.getElementById("logoutBtn")
+console.log(logoutbtn)
 
-
- logoutbtn.addEventListener("click",async()=>{
-     const { error } = await client.auth.signOut()
-if(error){
-    console.log("okk");
-}else{
-    console.log("signout!");
-    window.location.href = "index.html"
-}
+logoutbtn && logoutbtn.addEventListener("click", async (event) => {
+    event.preventDefault()
+    console.log("hello")
+    const { error } = await client.auth.signOut()
+    if (error) {
+        console.log("okk");
+    } else {
+        console.log("signout!");
+        window.location.href = "index.html"
+    }
 });
 
 
 // edit delete
 // UPLOAD
 
-  const { data, error } = await client.storage
-    .from("recipies")
-    .upload(currentImg, uploadedFile, {
-      cacheControl: "3600",
-      contentType: uploadedFile.type,
-      upsert: false,
-    });
+const upload = async () => {
+    const { data, error } = await client.storage
+        .from("recipies")
+        .upload(uploadedFile.type, {
+            cacheControl: "3600",
+            contentType: uploadedFile.type,
+            upsert: false,
+        });
 
-  if (error) {
-    console.log(error)
-
-
-  }
-
-  // update
-   const { dataa, errorr } = await client.storage
-    .from("recipies")
-    .update(currentImg, uploadedFile, {
-      contentType: uploadedFile.type,
-      cacheControl: "3600",
-    });
+    if (error) {
+        console.log(error)
 
 
+    }
 
-// delete
+    // update
+    const { dataa, errorr } = await client.storage
+        .from("recipies")
+        .update(currentImg, uploadedFile, {
+            contentType: uploadedFile.type,
+            cacheControl: "3600",
+        });
 
 
-deleteBtn.addEventListener("click", async () => {
-  let uploadedFile = file.files[0];
+}
+upload()
 
-  if (!uploadedFile) {
+const deleteBtn = document.querySelector("#btn-delete");
+
+deleteBtn?.addEventListener("click", async () => {
+
+    let uploadedFile = file.files[0];
+
+    if (!uploadedFile) {
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "No image found to delete",
+        });
+        return;
+    }
     Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "No image found to delete",
-    });
-    return;
-  }
-  const { data, error } = await client.storage
-    .from("images")
-    .remove([currentImg]);
-
-  uiImage.remove();
-
-  Swal.fire({
     title: "Image Deleted Successfully!",
     icon: "success",
     draggable: true,
-  });
-  if (error) {
-    console.log(error.message);
-    return;
-  }
-  
-  cameraImgText.innerHTML = "📸";
-  heading.innerHTML = "Select Image";
-  text.innerHTML = "Choose an image from your device";
 });
+
+    // Delete code yahan
+});
+
+
+
+// if (error) {
+// console.log(error.message);
+// return;
+// }
+
+// cameraImgText.innerHTML = "📸";
+// heading.innerHTML = "Select Image";
+// text.innerHTML = "Choose an image from your device";
+
 
 
 
@@ -481,28 +488,44 @@ deleteBtn.addEventListener("click", async () => {
 // Get elements
 
 const recipeForms = document.querySelector("#recipeForm");
-const recipeImage = document.querySelector("#recipeImage");
-const imagePreview = document.querySelector("#imagePreview");
+const recipeimage = document.querySelector("#recipeImage");
+const imagepreview = document.querySelector("#imagePreview");
 
 
 // Image Preview
+const recipeImage = document.querySelector("#recipeImage");
+const imagePreview = document.querySelector("#imagePreview");
 
-recipeImage.addEventListener("change", function () {
+if (recipeImage && imagePreview) {
 
-    const file = this.files[0];
+    recipeImage.addEventListener("change", function () {
 
-    if (file) {
+        const file = this.files[0];
 
-        const imageURL = URL.createObjectURL(file);
+        if (file) {
 
-        imagePreview.innerHTML = `
-            <img src="${imageURL}" alt="Recipe Preview">
-        `;
-    }
+            const imageURL = URL.createObjectURL(file);
 
-});
+            imagePreview.innerHTML = `
+                <img 
+                    src="${imageURL}" 
+                    alt="Recipe Preview"
+                    style="
+                        width: 200px;
+                        height: 150px;
+                        object-fit: cover;
+                        border-radius: 10px;
+                        margin-top: 15px;
+                    "
+                >
+            `;
+        } else {
+            imagePreview.innerHTML = "";
+        }
 
+    });
 
+}
 // Create Recipe
 
 recipeForm.addEventListener("submit", function (event) {
